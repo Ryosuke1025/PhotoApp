@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     fileprivate func upload() {
             let date = NSDate()
             let currentTimeStampInSecond = UInt64(floor(date.timeIntervalSince1970 * 1000))
-            let storageRef = Storage.storage().reference(forURL: "gs://photoapp-4542d.appspot.com").child("images").child("\(currentTimeStampInSecond).jpg")
+            let storageRef = Storage.storage().reference(forURL: "***").child("images").child("\(currentTimeStampInSecond).jpg")
             let metaData = StorageMetadata()
             metaData.contentType = "image/jpg"
             if let uploadData = self.imageView.image?.jpegData(compressionQuality: 0.9) {
