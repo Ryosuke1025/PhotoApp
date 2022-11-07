@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PhotoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3TZ-P2-jx8">
+                                <rect key="frame" x="50" y="700" width="314" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="アップロードする写真を選択"/>
+                                <connections>
+                                    <action selector="presentImagePicker:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hhT-Qu-WBD"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="68R-Oj-K8P">
+                                <rect key="frame" x="50" y="94" width="314" height="556"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMn-r9-Jl5">
+                                <rect key="frame" x="50" y="781" width="314" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="アップロード"/>
+                                <connections>
+                                    <action selector="startUpload:" destination="BYZ-38-t0r" eventType="touchDragInside" id="Fb1-A7-gNi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gMn-r9-Jl5" secondAttribute="bottom" constant="50" id="Oso-pR-ALS"/>
+                            <constraint firstItem="gMn-r9-Jl5" firstAttribute="top" secondItem="3TZ-P2-jx8" secondAttribute="bottom" constant="50" id="VzC-Qr-I9E"/>
+                            <constraint firstItem="3TZ-P2-jx8" firstAttribute="top" secondItem="68R-Oj-K8P" secondAttribute="bottom" constant="50" id="fzU-1x-arC"/>
+                            <constraint firstItem="68R-Oj-K8P" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="gJV-cg-qCO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gMn-r9-Jl5" secondAttribute="trailing" constant="50" id="iDK-6t-36t"/>
+                            <constraint firstItem="gMn-r9-Jl5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="kis-kn-Uwg"/>
+                            <constraint firstItem="3TZ-P2-jx8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="muU-6w-OXb"/>
+                            <constraint firstItem="68R-Oj-K8P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="o6c-X1-dNM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3TZ-P2-jx8" secondAttribute="trailing" constant="50" id="qk9-Zd-Vxv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="68R-Oj-K8P" secondAttribute="trailing" constant="50" id="s24-4J-t0h"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="68R-Oj-K8P" id="Vcx-S6-0w9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="113.04347826086958" y="65.625"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
