@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		A6E1A71B2918F54B00C55184 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E1A71A2918F54B00C55184 /* AppDelegate.swift */; };
 		A6E1A71D2918F54B00C55184 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E1A71C2918F54B00C55184 /* SceneDelegate.swift */; };
-		A6E1A71F2918F54B00C55184 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E1A71E2918F54B00C55184 /* ViewController.swift */; };
-		A6E1A7222918F54B00C55184 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6E1A7202918F54B00C55184 /* Main.storyboard */; };
+		A6E1A71F2918F54B00C55184 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E1A71E2918F54B00C55184 /* UploadViewController.swift */; };
+		A6E1A7222918F54B00C55184 /* UploadView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6E1A7202918F54B00C55184 /* UploadView.storyboard */; };
 		A6E1A7242918F54B00C55184 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6E1A7232918F54B00C55184 /* Assets.xcassets */; };
 		A6E1A7272918F54B00C55184 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6E1A7252918F54B00C55184 /* LaunchScreen.storyboard */; };
 		A6E1A7322918F54B00C55184 /* PhotoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E1A7312918F54B00C55184 /* PhotoAppTests.swift */; };
@@ -19,6 +19,8 @@
 		A6E1A74E2918F9B400C55184 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = A6E1A74D2918F9B400C55184 /* FirebaseFirestore */; };
 		A6E1A7502918F9B400C55184 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = A6E1A74F2918F9B400C55184 /* FirebaseStorage */; };
 		A6E1A7522919012800C55184 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A6E1A7512919012800C55184 /* GoogleService-Info.plist */; };
+		A6E1A756291A570900C55184 /* PhotoView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6E1A755291A570900C55184 /* PhotoView.storyboard */; };
+		A6E1A758291A574100C55184 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E1A757291A574100C55184 /* PhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +44,8 @@
 		A6E1A7172918F54B00C55184 /* PhotoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6E1A71A2918F54B00C55184 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6E1A71C2918F54B00C55184 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A6E1A71E2918F54B00C55184 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A6E1A7212918F54B00C55184 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A6E1A71E2918F54B00C55184 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
+		A6E1A7212918F54B00C55184 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UploadView.storyboard; sourceTree = "<group>"; };
 		A6E1A7232918F54B00C55184 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6E1A7262918F54B00C55184 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A6E1A7282918F54B00C55184 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,6 +55,8 @@
 		A6E1A73B2918F54C00C55184 /* PhotoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAppUITests.swift; sourceTree = "<group>"; };
 		A6E1A73D2918F54C00C55184 /* PhotoAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A6E1A7512919012800C55184 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A6E1A755291A570900C55184 /* PhotoView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoView.storyboard; sourceTree = "<group>"; };
+		A6E1A757291A574100C55184 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,12 +111,11 @@
 			children = (
 				A6E1A71A2918F54B00C55184 /* AppDelegate.swift */,
 				A6E1A71C2918F54B00C55184 /* SceneDelegate.swift */,
-				A6E1A71E2918F54B00C55184 /* ViewController.swift */,
-				A6E1A7202918F54B00C55184 /* Main.storyboard */,
-				A6E1A7232918F54B00C55184 /* Assets.xcassets */,
-				A6E1A7252918F54B00C55184 /* LaunchScreen.storyboard */,
+				A6E1A754291A50E400C55184 /* View */,
+				A6E1A753291A50C100C55184 /* Controller */,
 				A6E1A7282918F54B00C55184 /* Info.plist */,
 				A6E1A7512919012800C55184 /* GoogleService-Info.plist */,
+				A6E1A7252918F54B00C55184 /* LaunchScreen.storyboard */,
 			);
 			path = PhotoApp;
 			sourceTree = "<group>";
@@ -132,6 +135,25 @@
 				A6E1A73D2918F54C00C55184 /* PhotoAppUITestsLaunchTests.swift */,
 			);
 			path = PhotoAppUITests;
+			sourceTree = "<group>";
+		};
+		A6E1A753291A50C100C55184 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A6E1A71E2918F54B00C55184 /* UploadViewController.swift */,
+				A6E1A757291A574100C55184 /* PhotoViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A6E1A754291A50E400C55184 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A6E1A7202918F54B00C55184 /* UploadView.storyboard */,
+				A6E1A755291A570900C55184 /* PhotoView.storyboard */,
+				A6E1A7232918F54B00C55184 /* Assets.xcassets */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,10 +267,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6E1A756291A570900C55184 /* PhotoView.storyboard in Resources */,
 				A6E1A7522919012800C55184 /* GoogleService-Info.plist in Resources */,
 				A6E1A7272918F54B00C55184 /* LaunchScreen.storyboard in Resources */,
 				A6E1A7242918F54B00C55184 /* Assets.xcassets in Resources */,
-				A6E1A7222918F54B00C55184 /* Main.storyboard in Resources */,
+				A6E1A7222918F54B00C55184 /* UploadView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,7 +296,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6E1A71F2918F54B00C55184 /* ViewController.swift in Sources */,
+				A6E1A71F2918F54B00C55184 /* UploadViewController.swift in Sources */,
+				A6E1A758291A574100C55184 /* PhotoViewController.swift in Sources */,
 				A6E1A71B2918F54B00C55184 /* AppDelegate.swift in Sources */,
 				A6E1A71D2918F54B00C55184 /* SceneDelegate.swift in Sources */,
 			);
@@ -312,12 +336,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A6E1A7202918F54B00C55184 /* Main.storyboard */ = {
+		A6E1A7202918F54B00C55184 /* UploadView.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A6E1A7212918F54B00C55184 /* Base */,
 			);
-			name = Main.storyboard;
+			name = UploadView.storyboard;
 			sourceTree = "<group>";
 		};
 		A6E1A7252918F54B00C55184 /* LaunchScreen.storyboard */ = {
@@ -457,7 +481,7 @@
 				INFOPLIST_FILE = PhotoApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = UploadView;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -485,7 +509,7 @@
 				INFOPLIST_FILE = PhotoApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = UploadView;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

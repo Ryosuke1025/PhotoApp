@@ -8,16 +8,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Upload View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PhotoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="UploadViewController" customModule="PhotoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3TZ-P2-jx8">
-                                <rect key="frame" x="50" y="700" width="314" height="31"/>
+                                <rect key="frame" x="50" y="753" width="314" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="アップロードする写真を選択"/>
                                 <connections>
@@ -25,30 +25,41 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="68R-Oj-K8P">
-                                <rect key="frame" x="50" y="94" width="314" height="556"/>
+                                <rect key="frame" x="50" y="94" width="314" height="609"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMn-r9-Jl5">
-                                <rect key="frame" x="50" y="781" width="314" height="31"/>
+                                <rect key="frame" x="50" y="804" width="314" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="アップロード"/>
                                 <connections>
                                     <action selector="startUpload:" destination="BYZ-38-t0r" eventType="touchDragInside" id="Fb1-A7-gNi"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nrm-QY-dJK">
+                                <rect key="frame" x="50" y="855" width="314" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="写真一覧"/>
+                                <connections>
+                                    <action selector="fotoView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="voi-l4-e0P"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gMn-r9-Jl5" secondAttribute="bottom" constant="50" id="Oso-pR-ALS"/>
-                            <constraint firstItem="gMn-r9-Jl5" firstAttribute="top" secondItem="3TZ-P2-jx8" secondAttribute="bottom" constant="50" id="VzC-Qr-I9E"/>
+                            <constraint firstItem="Nrm-QY-dJK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="EMa-eC-Jl3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gMn-r9-Jl5" secondAttribute="trailing" constant="50" id="Ea4-cn-yO9"/>
+                            <constraint firstItem="Nrm-QY-dJK" firstAttribute="top" secondItem="gMn-r9-Jl5" secondAttribute="bottom" constant="20" id="W4J-QD-KhX"/>
+                            <constraint firstItem="gMn-r9-Jl5" firstAttribute="top" secondItem="3TZ-P2-jx8" secondAttribute="bottom" constant="20" id="cgH-uI-8Jo"/>
                             <constraint firstItem="3TZ-P2-jx8" firstAttribute="top" secondItem="68R-Oj-K8P" secondAttribute="bottom" constant="50" id="fzU-1x-arC"/>
                             <constraint firstItem="68R-Oj-K8P" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="gJV-cg-qCO"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gMn-r9-Jl5" secondAttribute="trailing" constant="50" id="iDK-6t-36t"/>
-                            <constraint firstItem="gMn-r9-Jl5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="kis-kn-Uwg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Nrm-QY-dJK" secondAttribute="trailing" constant="50" id="hK7-Ls-2tE"/>
                             <constraint firstItem="3TZ-P2-jx8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="muU-6w-OXb"/>
+                            <constraint firstItem="gMn-r9-Jl5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="n3x-IT-Cwf"/>
                             <constraint firstItem="68R-Oj-K8P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="o6c-X1-dNM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3TZ-P2-jx8" secondAttribute="trailing" constant="50" id="qk9-Zd-Vxv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="68R-Oj-K8P" secondAttribute="trailing" constant="50" id="s24-4J-t0h"/>
+                            <constraint firstAttribute="bottom" secondItem="Nrm-QY-dJK" secondAttribute="bottom" constant="10" id="tOA-jQ-pRt"/>
                         </constraints>
                     </view>
                     <connections>

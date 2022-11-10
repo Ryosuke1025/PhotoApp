@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseStorage
 
-class ViewController: UIViewController {
+class UploadViewController: UIViewController {
     
     let imagePicker = UIImagePickerController()
     @IBOutlet weak var imageView: UIImageView!
@@ -17,31 +17,36 @@ class ViewController: UIViewController {
         imagePicker.sourceType = .photoLibrary //画像ライブラリを呼び出します
         present(imagePicker, animated: true, completion: nil)
     }
-    
     @IBAction func startUpload(_ sender: Any) {
         upload()
     }
     
+    @IBAction func fotoView(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "PhotoView", bundle: nil)
+            let nextVC = storyboard.instantiateViewController(withIdentifier: "PhotoViewController")
+            self.present(nextVC, animated: true, completion: nil)
+    }
+    
     fileprivate func upload() {
-            let date = NSDate()
-            let currentTimeStampInSecond = UInt64(floor(date.timeIntervalSince1970 * 1000))
-            let storageRef = Storage.storage().reference(forURL: "***").child("images").child("\(currentTimeStampInSecond).jpg")
-            let metaData = StorageMetadata()
-            metaData.contentType = "image/jpg"
-            if let uploadData = self.imageView.image?.jpegData(compressionQuality: 0.9) {
-                storageRef.putData(uploadData, metadata: metaData) { (metadata , error) in
-                    if error != nil {
-                        print("error: \(error?.localizedDescription)")
-                    }
-                    storageRef.downloadURL(completion: { (url, error) in
-                        if error != nil {
-                            print("error: \(error?.localizedDescription)")
-                        }
-                        print("url: \(url?.absoluteString)")
-                    })
+        let date = NSDate()
+        let currentTimeStampInSecond = UInt64(floor(date.timeIntervalSince1970 * 1000))
+        let storageRef = Storage.storage().reference(forURL: "gs://photoapp-4542d.appspot.com").child("images").child("\(currentTimeStampInSecond).jpg")
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpg"
+        if let uploadData = self.imageView.image?.jpegData(compressionQuality: 0.9) {
+            storageRef.putData(uploadData, metadata: metaData) { (metadata , error) in
+                if error != nil {
+                    print("error: \(String(describing: error?.localizedDescription))")
                 }
+                storageRef.downloadURL(completion: { (url, error) in
+                    if error != nil {
+                        print("error: \(String(describing: error?.localizedDescription))")
+                    }
+                    print("url: \(String(describing: url?.absoluteString))")
+                })
             }
         }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,8 +54,8 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
- 
+extension UploadViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             imageView.contentMode = .scaleAspectFit
