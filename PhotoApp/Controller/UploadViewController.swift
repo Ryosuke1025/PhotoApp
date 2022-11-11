@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseStorage
+import FirebaseFirestore
 
 class UploadViewController: UIViewController {
     
@@ -18,7 +19,7 @@ class UploadViewController: UIViewController {
         present(imagePicker, animated: true, completion: nil)
     }
     @IBAction func startUpload(_ sender: Any) {
-        upload()
+        uploadToStorage()
     }
     
     @IBAction func fotoView(_ sender: Any) {
@@ -27,7 +28,7 @@ class UploadViewController: UIViewController {
             self.present(nextVC, animated: true, completion: nil)
     }
     
-    fileprivate func upload() {
+    fileprivate func uploadToStorage() {
         let date = NSDate()
         let currentTimeStampInSecond = UInt64(floor(date.timeIntervalSince1970 * 1000))
         let storageRef = Storage.storage().reference(forURL: "gs://photoapp-4542d.appspot.com").child("images").child("\(currentTimeStampInSecond).jpg")
@@ -43,11 +44,22 @@ class UploadViewController: UIViewController {
                         print("error: \(String(describing: error?.localizedDescription))")
                     }
                     print("url: \(String(describing: url?.absoluteString))")
+                    self.uploadToFireStore(url: url)
                 })
             }
         }
     }
-    
+    func uploadToFireStore(url: URL?) {
+        let db = Firestore.firestore()
+        guard let photo_url = url?.absoluteString else { return }
+        db.collection("users").document("user1").setData(["photo_url": photo_url, "ID": 1], merge: false) { error in
+            if error != nil {
+                print("エラーが起きました")
+            } else {
+                print("写真のurlが保存されました")
+            }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
