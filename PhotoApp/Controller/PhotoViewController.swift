@@ -12,4 +12,8 @@ class PhotoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    func getImage(){
+        
+    }
 }

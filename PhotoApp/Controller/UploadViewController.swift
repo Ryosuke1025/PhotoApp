@@ -28,7 +28,7 @@ class UploadViewController: UIViewController {
             self.present(nextVC, animated: true, completion: nil)
     }
     
-    fileprivate func uploadToStorage() {
+    func uploadToStorage() {
         let date = NSDate()
         let currentTimeStampInSecond = UInt64(floor(date.timeIntervalSince1970 * 1000))
         let storageRef = Storage.storage().reference(forURL: "gs://photoapp-4542d.appspot.com").child("images").child("\(currentTimeStampInSecond).jpg")
@@ -52,7 +52,11 @@ class UploadViewController: UIViewController {
     func uploadToFireStore(url: URL?) {
         let db = Firestore.firestore()
         guard let photo_url = url?.absoluteString else { return }
-        db.collection("users").document("user1").setData(["photo_url": photo_url, "ID": 1], merge: false) { error in
+        db.collection("users").document("user1").setData([
+            "ID": 1,
+            "photo_url": FieldValue.arrayUnion([photo_url]),
+        ], merge: true
+        ) { error in
             if error != nil {
                 print("エラーが起きました")
             } else {
