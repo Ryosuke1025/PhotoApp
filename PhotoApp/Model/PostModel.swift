@@ -6,7 +6,7 @@
 //
 
 struct PostModel: Codable {
-    let id: Int?
-    let photoURLs: [String]?
+    var id: String?
+    var photoURLs: [String]?
 }
 

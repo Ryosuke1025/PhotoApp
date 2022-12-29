@@ -25,11 +25,12 @@ class UploadViewController: UIViewController {
     @IBAction func presentImagePicker(_ sender: Any) {
         present(picker, animated: true, completion: nil)
     }
+
     
     @IBAction func fotoView(_ sender: Any) {
         let storyboard = UIStoryboard(name: "PhotoView", bundle: nil)
         let nextVC = storyboard.instantiateViewController(withIdentifier: "PhotoViewController")
-        self.present(nextVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
 
     func uploadToStorage(image: UIImage) {
@@ -58,7 +59,7 @@ class UploadViewController: UIViewController {
         let db = Firestore.firestore()
         db.collection("users").document("user1").setData(
         [
-            "ID": 1,
+            "ID": "1",
             "photoURLs": FieldValue.arrayUnion([photo_url]),
         ], merge: true
         ) { error in
